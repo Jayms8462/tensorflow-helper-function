@@ -277,3 +277,7 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+def check_tuneable(model):
+  for layer_number, layer in enumerate(base_model.layers):
+    print(layer_number, layer.name, layer.trainable)
